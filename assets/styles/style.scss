@@ -1,0 +1,80 @@
+@import "reset";
+@import "layer";
+
+@layer ab-test {
+  div {
+    color: #00f;
+  }
+  .test {
+    color: #00f;
+  }
+  #test {
+    color: #00f;
+  }
+}
+
+@layer molecules {
+  div {
+    color: #f00;
+  }
+  .test {
+    color: #f00;
+  }
+  #test {
+    color: #f00;
+  }
+}
+
+@layer atoms {
+  div {
+    color: #0f0;
+  }
+  .test {
+    color: #0f0;
+  }
+  #test {
+    color: #0f0;
+  }
+}
+
+// NOTE:
+// layer.scssで優先度指定してないlayerは記載順に優先度が設定される
+// （hogeのidセレクタよりもfugaの要素セレクタのほうが優先されている）
+// layer内で指定したスタイルよりもlayer外で指定したスタイルが優先される
+@layer hoge {
+  div {
+    color: #ddd;
+  }
+  .test {
+    color: #ddd;
+  }
+  #test {
+    color: #ddd;
+  }
+}
+
+div {
+  color: #00f;
+}
+.test {
+  color: #00f;
+}
+#test {
+  color: #00f;
+}
+
+@layer fuga {
+  div {
+    color: #888;
+  }
+  .test {
+    color: #888;
+  }
+  #test {
+    color: #888;
+  }
+  // NOTE: セレクタの詳細度を上げても優先度には変化なし
+  div > div#test {
+    color: #888;
+  }
+}
