@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <atoms-test class="atoms-test" />
+    <organisms-alert-modal />
   </div>
 </template>
 

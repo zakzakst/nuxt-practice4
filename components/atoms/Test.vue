@@ -63,6 +63,12 @@
           // @layer ab-tests {
           //   color: #000;
           // }
+          // NOTE: レイヤーの順番指定にatoms.ab-testsと入れてもベースの順番が優先される
+          @layer ab-tests {
+            > .class-5 {
+              color: #eee;
+            }
+          }
         }
       }
     }
@@ -72,7 +78,7 @@
 // NOTE: pages/indexで指定したスタイルを上書きできる
 @layer ab-tests {
   .class-5 {
-    color: #000;
+    color: #888;
   }
 }
 
