@@ -1,9 +1,13 @@
 <template>
   <div class="index">
     <atoms-test class="atoms-test" />
-    <organisms-alert-modal />
+    <organisms-alert-modal :disabled="alertDisabled" />
   </div>
 </template>
+
+<script lang="ts" setup>
+const alertDisabled = ref(true);
+</script>
 
 <style lang="scss" scoped>
 @layer pages {
