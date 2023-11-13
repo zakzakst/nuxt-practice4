@@ -39,8 +39,8 @@ withDefaults(defineProps<Props>(), {
     :deep(.close-button) {
       border-radius: 0;
       @container style(--type: 'disabled') {
-        border-color: #000;
         background: #888;
+        border-color: #000;
         pointer-events: none;
       }
     }
@@ -67,8 +67,8 @@ withDefaults(defineProps<Props>(), {
 //     :deep(.content) {
 //       > .bottom {
 //         > .close-button {
-//           border-color: #000;
 //           background: #888;
+//           border-color: #000;
 //           pointer-events: none;
 //         }
 //       }
