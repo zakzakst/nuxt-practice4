@@ -20,6 +20,7 @@ withDefaults(defineProps<Props>(), {
 @layer organisms {
   .alert-modal {
     container-name: alert-modal;
+    // TODO: カスタムプロパティ「--type」がこのままだと上層のlayerで同じ名前が利用された時に上書きされる？要挙動確認（インラインstyleに記載するのが丸いかなぁ。。）
     &.--disabled {
       --type: "disabled";
     }
