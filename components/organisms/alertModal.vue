@@ -15,7 +15,7 @@
       --type: disabled;
     }
 
-    // TODO: 下記のクラスセレクタ（.text）が下層のコンポーネントにも影響している？状況調べる
+    // TODO: 下記のクラスセレクタ（.text）が下層のコンポーネントにも影響している？状況調べる（でも@layer使わなくても起きる現象か？）
     .text {
       padding: 12px 0;
       @container style(--type: disabled) {
