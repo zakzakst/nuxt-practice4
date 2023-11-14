@@ -1,5 +1,9 @@
 <template>
-  <molecules-modal class="alert-modal" :class="{ '--disabled': disabled }">
+  <molecules-modal
+    class="alert-modal"
+    :class="{ '--disabled': disabled }"
+    :style="style"
+  >
     <p class="text">
       テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
     </p>
@@ -11,8 +15,12 @@ type Props = {
   disabled?: boolean;
 };
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   disabled: false,
+});
+
+const style = computed(() => {
+  return props.disabled ? '--type: "disabled"' : undefined;
 });
 </script>
 
@@ -20,14 +28,14 @@ withDefaults(defineProps<Props>(), {
 @layer organisms {
   .alert-modal {
     container-name: alert-modal;
-    // TODO: カスタムプロパティ「--type」がこのままだと上層のlayerで同じ名前が利用された時に上書きされる？要挙動確認（インラインstyleに記載するのが丸いかなぁ。。）
-    &.--disabled {
-      --type: "disabled";
-    }
+    // TODO: カスタムプロパティにscopedの値反映できるのか調べてみたい
+    // &.--disabled {
+    //   --type: "disabled";
+    // }
 
     .text {
       padding: 12px 0;
-      @container style(--type: 'disabled') {
+      @container alert-modal style(--type: 'disabled') {
         color: #f00;
       }
     }
@@ -39,7 +47,7 @@ withDefaults(defineProps<Props>(), {
 
     :deep(.close-button) {
       border-radius: 0;
-      @container style(--type: 'disabled') {
+      @container alert-modal style(--type: 'disabled') {
         background: #888;
         border-color: #000;
         pointer-events: none;
