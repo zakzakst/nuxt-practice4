@@ -1,12 +1,49 @@
 <template>
   <div class="index">
     <atoms-test class="atoms-test" />
-    <organisms-alert-modal :disabled="alertDisabled" />
+    <!-- <organisms-alert-modal :disabled="alertDisabled" /> -->
+    <!-- <nuxt-img
+      src="/images/600x600.png"
+      width="450"
+      height="230"
+      format="webp"
+      quality="80"
+      fit="contain"
+      background="#FFFFFF00"
+      :placeholder="[450, 230, 50, 5]"
+    /> -->
+    <!-- <nuxt-img
+      src="/images/600x600.png"
+      width="50"
+      height="50"
+      format="webp"
+      quality="80"
+      fit="cover"
+      background="#FFFFFF00"
+      :placeholder="[450, 230, 50, 5]"
+      sizes="100vw sm:50vw md:400px"
+    /> -->
+    <nuxt-img
+      src="https://picsum.photos/id/237/600/600"
+      width="100"
+      height="100"
+      format="webp"
+      quality="80"
+      fit="cover"
+      background="#FFFFFF00"
+      :placeholder="[450, 230, 50, 5]"
+      sizes="100vw sm:50vw md:400px"
+      @load="onLoad"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 const alertDisabled = ref(true);
+
+const onLoad = () => {
+  console.log("onload");
+};
 </script>
 
 <style lang="scss" scoped>
