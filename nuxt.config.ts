@@ -5,4 +5,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/image"],
   // https://image.nuxt.com/get-started/configuration
   // image: {},
+  experimental: {
+    viewTransition: true,
+  },
 });
