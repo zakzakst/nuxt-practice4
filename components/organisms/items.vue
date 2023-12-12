@@ -3,7 +3,7 @@
     <article v-for="item in items">
       <NuxtLink :to="`/items/${item.id}`" @click.native="active = item.id">
         <img
-          :src="`https://picsum.photos/id/${item.src}/200/300`"
+          :src="`https://picsum.photos/id/${item.id}/200/300`"
           alt=""
           :class="{ active: active === item.id }"
         />

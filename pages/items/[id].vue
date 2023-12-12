@@ -1,6 +1,11 @@
 <template>
   <section>
-    <img :src="`https://picsum.photos/id/${route.params.id}/200/300`" alt="" />
+    <NuxtLink to="/items">
+      <img
+        :src="`https://picsum.photos/id/${route.params.id}/200/300`"
+        alt=""
+      />
+    </NuxtLink>
   </section>
 </template>
 
