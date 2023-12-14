@@ -8,6 +8,7 @@
           :class="{ active: active === item.id }"
         />
       </NuxtLink>
+      <p class="title" :class="{ active: active === item.id }">タイトル</p>
     </article>
   </section>
 </template>
@@ -33,6 +34,10 @@ const items = ref([
 <style scoped>
 img.active {
   view-transition-name: selected-item;
+  contain: layout;
+}
+title.active {
+  view-transition-name: title;
   contain: layout;
 }
 </style>
